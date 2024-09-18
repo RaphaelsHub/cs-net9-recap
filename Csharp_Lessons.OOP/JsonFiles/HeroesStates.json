@@ -1,0 +1,86 @@
+{
+  "Archer": {
+    "Levels": [
+      {
+        "Level": 1,
+        "RequiredExperienceForNextLevel": 100,
+        "Health": 80,
+        "Armor": 20,
+        "Damage": 50,
+        "SpeedType": "High"
+      },
+      {
+        "Level": 2,
+        "RequiredExperienceForNextLevel": 300,
+        "Health": 90,
+        "Armor": 25,
+        "Damage": 60,
+        "SpeedType": "High"
+      },
+      {
+        "Level": 3,
+        "RequiredExperienceForNextLevel": 600,
+        "Health": 100,
+        "Armor": 30,
+        "Damage": 70,
+        "SpeedType": "VeryHigh"
+      }
+    ],
+    "Skills": [
+      {
+        "SkillName": "Arrow",
+        "SkillType": "Attack",
+        "Damage": 20,
+        "SkillManaCost": 10
+      },
+      {
+        "SkillName": "ArrowRain",
+        "SkillType": "Attack",
+        "Damage": 30,
+        "SkillManaCost": 20
+      }
+    ]
+  },
+  "Knight": {
+    "Levels": [
+      {
+        "Level": 1,
+        "RequiredExperienceForNextLevel": 100,
+        "Health": 120,
+        "Armor": 50,
+        "Damage": 40,
+        "SpeedType": "Medium"
+      },
+      {
+        "Level": 2,
+        "RequiredExperienceForNextLevel": 300,
+        "Health": 140,
+        "Armor": 60,
+        "Damage": 50,
+        "SpeedType": "Medium"
+      },
+      {
+        "Level": 3,
+        "RequiredExperienceForNextLevel": 600,
+        "Health": 160,
+        "Armor": 70,
+        "Damage": 60,
+        "SpeedType": "Medium"
+      }
+    ],
+    "Skills": [
+      {
+        "SkillName": "Sword",
+        "SkillType": "Attack",
+        "Damage": 30,
+        "SkillManaCost": 10
+      },
+      {
+        "SkillName": "Shield",
+        "SkillType": "Defense",
+        "Damage": 20,
+        "SkillManaCost": 20
+      }
+    ]
+  }
+}

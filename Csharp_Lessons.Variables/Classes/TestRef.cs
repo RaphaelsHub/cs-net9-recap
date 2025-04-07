@@ -1,9 +1,8 @@
 namespace Csharp_Lessons.Classes;
 
-public class TestRef
+public class TestRef(int x, int y)
 {
-    public int X { get; set; }
-    public int Y { get; set; }
-
-    public void Print() => Console.WriteLine(X + " " + Y);
+    public int X { get; set; } = x;
+    public int Y { get; set; } = y;
+    public void Print() => Console.WriteLine(nameof(TestRef) + " " + X + " " + Y);
 }

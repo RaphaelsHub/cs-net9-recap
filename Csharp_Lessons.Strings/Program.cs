@@ -6,60 +6,58 @@ class Program
 {
     static void Main()
     {
-        ConsoleTest();
+        ConsoleSettings();
         Concatenation();
         StringStaticMethods();
         StringBuilderExample();
     }
-    
-    private static void ConsoleTest()
+
+    private static void ConsoleSettings()
     {
-        Console.WriteLine("Hello, World!"); 
         Console.BackgroundColor = ConsoleColor.Blue;
         Console.ForegroundColor = ConsoleColor.White;
-        Console.WriteLine("Hello, World!");
-        Console.ResetColor();
         Console.Write("What is your name? ");
+        Console.ResetColor();
         string? name = Console.ReadLine();
         Console.WriteLine($"Hello, {name}");
     }
-    
     private static void Concatenation()
     {
-        var surname = "Pekel";
+        var surname = "Machine";
         var name = "Vlad";
-
-        var unused = name + " " + surname;
-        var unused1 = string.Concat(name, " ", surname);
-        var unused2 = string.Format("{0} {1}", name, surname);
-        var unused3 = $"{name} {surname}";
+        
+        Console.WriteLine($"Hello, {surname} {name}");
+        Console.WriteLine("Hello, " + surname + " " + name);
+        Console.WriteLine(string.Concat("Hello, ", surname, " ", name));
+        Console.WriteLine(string.Format("Hello, {0} {1}", surname, name));
     }
-    
     private static void StringStaticMethods()
     {
-        var str = //Сделает конкатенацию
-            string.Join(" ", "Alex", "Pekel", "Is A King"); //Добавит в конец
-        str = str.Insert(0, "By the way, "); //Вставит текст вначале указателя
-        str = str.Remove(10); //Удалит начиная с 10 символа
-        str = str.Replace('a', 'E'); //Заменит
-        str = str.ToLower(); //Привидет к маленьким
-        string[] unused = str.Split(';'); //Разделит на под массивы и вернет массивы
+        var str = "Hello, World";
+        str = str.Insert(str.Length, " !!!"); //Вставит в конец
+        str = str.Remove(str.Length - 2, 1);
+        str = str.Remove(str.Length-1);
+        str = str.Replace("o", "O");
+        str = str.ToLower();
+        string []arr = str.Split(' ');
+        
+        foreach (var word in arr) 
+            Console.WriteLine(word);
     }
-    
     private static void StringBuilderExample()
     {
-        var sb = new StringBuilder();
-
-        // Append some strings
-        sb.Append("Hello");
-        sb.Append(" ");
-        sb.Append("World");
+        var stringBuilder = new StringBuilder();
+        stringBuilder.Insert(0, "Hello world!");
+        stringBuilder.Append(" This is a test.");
+        stringBuilder.Replace("world", "every one");
+        stringBuilder.Remove(stringBuilder.Length-1, 1);
+        stringBuilder.AppendFormat(" - {0} {1}", "Welcome", "User!");
+        var arr = stringBuilder.GetChunks();
+        Console.WriteLine(stringBuilder.ToString());
         
-        sb.AppendFormat(" - {0} {1}", "Welcome", "User"); // Append formatted strings
-        sb.Insert(0, "Greetings: ");        // Insert a string
-        sb.Remove(11, 7); // Remove "Welcome"
-        sb.Replace("World", "Everyone");        // Replace a section of the string
-        string result = sb.ToString();
-        Console.WriteLine(result);
+        foreach (var chunk in arr)
+        {
+            Console.Write(chunk);
+        }
     }
 }
